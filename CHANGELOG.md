@@ -4,6 +4,14 @@ All notable changes to the ORBIT character progression planner are summarized he
 
 [← Back to README](README.md) · [Launch ORBIT](https://jlhiskey.github.io/starfield-orbit/)
 
+## v1.2 — Character-aware Advisor chat
+
+- Added a responsive **Advisor** tab with conversation history and quick questions.
+- Added character-aware rule-based local guidance for skill-point mismatches, roadmap decisions, challenges, and Undo.
+- Added an optional authenticated Cloudflare Worker backend using the OpenAI Responses API for full AI chat. Requires separate deployment and credentials.
+- Added **Copy context & open ChatGPT** for an AI handoff without a custom backend.
+- Preserved the existing Bounty Hunter save format and skill purchase rules.
+
 ## v1.1 — Learn-button and challenge-tracking fix
 
 - Added rank-challenge checkboxes directly to **Roadmap** and **Overview**, not just the Skill library.
