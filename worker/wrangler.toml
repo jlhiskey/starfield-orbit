@@ -1,0 +1,7 @@
+name = "orbit-starfield-advisor"
+main = "index.js"
+compatibility_date = "2026-10-21"
+workers_dev = true
+
+[vars]
+OPENAI_MODEL = "gpt-5-mini"
