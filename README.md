@@ -1,10 +1,18 @@
 # ORBIT · Starfield Character Progression Planner
 
-**A lightweight, mobile-friendly skill and level planner for Bethesda's *Starfield*.** Track the skills you've bought, organize future upgrades, and see exactly why a skill rank is locked.
+**A mobile-friendly progression planner and conversational character advisor for Bethesda's *Starfield*.** Track purchased skills, queue upcoming ranks, diagnose locked upgrades, and ask the Advisor about your actual character.
 
-**[🚀 Open the ORBIT planner](https://jlhiskey.github.io/starfield-orbit/)** · [Repository](https://github.com/jlhiskey/starfield-orbit) · [Full user guide](docs/USER_GUIDE.md) · [Changelog](CHANGELOG.md)
+**[🚀 Launch ORBIT](https://jlhiskey.github.io/starfield-orbit/)** · [✦ Advisor and AI setup](docs/AI_SETUP.md) · [Full user guide](docs/USER_GUIDE.md) · [Changelog](CHANGELOG.md)
 
 > **Hosting note:** The URL above is the GitHub Pages address for this project. If it shows a 404, publishing may not yet be enabled. Follow the [GitHub Pages setup](#publish-with-github-pages) below. The app's source code is in `index.html`.
+
+## What's new in v1.2
+
+- **✦ Advisor tab:** chat interface that automatically reads the character's recorded level, purchases, available points, roadmap, and active challenges.
+- **Local guide:** instant, private, rule-based build advice with no API or setup required. It isn't a language model.
+- **Optional AI chat:** use a private Cloudflare Worker and OpenAI Responses API for genuine conversational answers; credentials remain on the server. [Setup guide](docs/AI_SETUP.md).
+- **ChatGPT handoff:** copy character context and your last question to paste into ChatGPT without an API connection.
+- Existing character save key remains `orbit-starfield-v1`, so the upgrade does not reset your build.
 
 ## Features
 
@@ -40,6 +48,7 @@ See the **[step-by-step user guide](docs/USER_GUIDE.md)** for details and troubl
 | **Roadmap** | Presets, reorder/remove future ranks, mark challenges complete, learn available ranks, copy plan as text |
 | **Skill library** | Search and filter all skills by category/tier, mark challenges, queue a rank, learn or undo a rank |
 | **Character** | Edit your character name, level, and traits; save notes; export/import JSON; reset the planner |
+| **Advisor** | Ask about your build, points, challenges, and next skills; optionally connect a private AI gateway |
 
 ## How progression works
 
@@ -54,7 +63,7 @@ For many skills the planner shows a generic challenge reminder; **use Starfield'
 
 ## Saves and privacy
 
-ORBIT stores the current character in your browser's **localStorage** (`orbit-starfield-v1`). It does **not** sync saves to GitHub, Bethesda, or other devices.
+ORBIT stores the current character in your browser's **localStorage** (`orbit-starfield-v1`). Advisor history has a separate browser-local key; it is not part of the character JSON export. It does **not** sync saves to GitHub, Bethesda, or other devices. An optional AI request sends your character snapshot and recent conversation to a private gateway and OpenAI, as described in [AI setup](docs/AI_SETUP.md).
 
 - Same browser and same website URL: progress normally persists across visits.
 - Different browser, different device, or local file → hosted website: **export JSON from the old app and import it on the new one**.
@@ -76,7 +85,7 @@ The site entry point is the root-level `index.html`; no dependency installation 
 
 ## Development
 
-Clone this repository, then open `index.html` locally in your browser. All HTML, CSS, and JavaScript live in that file.
+Clone this repository, then open `index.html` locally in your browser. The planner core lives in `index.html`; the Advisor UI lives in `advisor.js` and `advisor.css`. The optional backend template is under `worker/`.
 
 ```bash
 git clone https://github.com/jlhiskey/starfield-orbit.git
@@ -100,6 +109,6 @@ When updating the app, preserve the existing localStorage key or supply an expli
 
 ## Project status
 
-**v1.1** · The Learn-button interaction was improved to expose blockers, and challenge checkboxes were added to the Roadmap and Overview. See the [changelog](CHANGELOG.md).
+**v1.2** · Added Advisor chat with local guidance, optional server-backed AI, and ChatGPT context handoff. See the [changelog](CHANGELOG.md).
 
 This is an unofficial fan-made planning tool and is not affiliated with or endorsed by Bethesda or Microsoft.
