@@ -28,6 +28,21 @@ ORBIT is a browser-based *Starfield* character progression companion. It helps y
 
 The labels for traits are editable, but changing them in ORBIT does **not** change your actual in-game character.
 
+## ORBIT Advisor chat (v1.2)
+
+The **✦ Advisor** tab offers character-aware help, built around the progression you have actually recorded in the app.
+
+1. Open **Advisor** in the navigation bar.
+2. Choose a quick prompt, such as **Skill points**, **Next skill**, **Challenges**, **Ship build**, or **Undo**.
+3. Or type a question and press **Enter** or **Send**.
+4. The local guide reads your character's level, purchased ranks, free Bounty Hunter starting ranks, active challenges, and upcoming roadmap at the moment you ask.
+
+**Local guide is not an AI model.** It covers common progression questions deterministically and works without network access or credentials. For an actual language model, open **AI connection → Configure** and follow the [AI setup guide](AI_SETUP.md). The separate backend is optional and is not activated by default.
+
+**Copy context & open ChatGPT** provides a no-API alternative: it copies your current build and last question to the clipboard and opens ChatGPT. Paste the prompt into ChatGPT to continue there.
+
+Advisor messages are saved in this browser separately from your character's JSON save. They are **not included** when exporting your character. Select **Clear chat** to delete the local Advisor conversation; it does not reset your character.
+
 ## 2. Record a level-up
 
 On **Overview**, tap **+** beside the level number. The **−** button corrects accidental level increases, but the app will not allow a level below the number of points you've already spent plus one.
