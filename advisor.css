@@ -1,0 +1,30 @@
+/* ORBIT Advisor, responsive add-on */
+.ad-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(265px,.7fr);gap:16px;align-items:start}
+.ad-layout .panel{min-width:0}.ad-main{padding:0;overflow:hidden}
+.ad-chatheader{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:17px 19px;border-bottom:1px solid var(--line);background:#101f30}
+.ad-agent{display:flex;align-items:center;gap:12px;min-width:0}
+.ad-agent-icon{height:40px;width:40px;background:#183f4a;border:1px solid #518a8e;border-radius:12px;display:grid;place-items:center;font-size:26px;color:var(--cyan);flex-shrink:0}
+.ad-agent strong{font-size:14px}.ad-agent small{display:block;color:var(--muted);font-size:11px}
+.ad-messages{height:clamp(360px,50vh,560px);overflow:auto;padding:23px 19px;display:flex;flex-direction:column;gap:20px;scroll-behavior:smooth}
+.ad-message{display:flex;align-items:flex-start;gap:10px;max-width:94%}
+.ad-message.user{margin-left:auto;flex-direction:row-reverse}
+.ad-avatar{height:30px;width:30px;flex:0 0 30px;display:grid;place-items:center;background:#143c47;border:1px solid #3d8381;border-radius:9px;color:var(--cyan);font-weight:800;font-size:12px}
+.ad-message.user .ad-avatar{font-size:9px;color:#bcd8ed;background:#213950;border-color:#45627a}
+.ad-bubble{font-size:13px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;background:#14263a;border:1px solid #2a4359;color:#dceaf4;border-radius:6px 13px 13px 13px;padding:13px 15px;min-width:0}
+.ad-message.user .ad-bubble{background:#163b40;color:#e2f9f4;border-color:#356d71;border-radius:13px 6px 13px 13px}
+.ad-chips{display:flex;gap:8px;flex-wrap:wrap;padding:12px 18px 5px;border-top:1px solid var(--line)}
+.ad-chip{border-radius:18px;color:#a7dcd9;background:#17303e;border:1px solid #345b62;padding:7px 11px;font-size:12px}
+.ad-chip:hover,.ad-chip:focus-visible{background:#204853}
+.ad-compose{padding:14px 17px 3px;display:flex;gap:10px;align-items:end}
+.ad-compose textarea{min-height:58px;max-height:170px;resize:vertical;flex:1;min-width:0;border:1px solid #38536a;background:#0b1b2c;color:#f0f7fa;border-radius:10px;padding:12px;font:inherit;font-size:13px}
+.ad-compose button{height:46px}.ad-help{font-size:10px;color:var(--muted);margin:2px 17px 17px}
+.ad-side{display:grid;gap:15px}
+.ad-side .panel{padding:17px}.ad-side h3{margin:0 0 8px}
+.ad-quickstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ad-quickstats>div{padding:10px;background:#0a1b2c;border:1px solid #294155;border-radius:9px}
+.ad-quickstats small{display:block;font-size:10px;color:var(--muted)}.ad-quickstats strong{font-size:23px;display:block;color:var(--cyan)}
+.ad-side .field input{width:100%;margin-top:3px}
+.ad-side .field label{line-height:1.4}.ad-side a{color:var(--cyan)}.ad-side .btn{white-space:normal;text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.ad-layout{grid-template-columns:1fr}.ad-side{grid-template-columns:repeat(2,minmax(0,1fr))}.ad-side>.panel:first-child{grid-column:1/-1}.ad-messages{height:48vh}}
+@media(max-width:560px){.ad-side{grid-template-columns:1fr}.ad-side>.panel:first-child{grid-column:auto}.ad-chatheader{padding:13px 12px}.ad-chatheader .smallbtn{font-size:11px}.ad-messages{height:47vh;min-height:330px;padding:15px 12px;gap:15px}.ad-bubble{padding:10px 12px}.ad-chips{padding:10px 12px 3px}.ad-compose{padding:12px 10px 1px}.ad-compose button{padding:9px 13px}}
